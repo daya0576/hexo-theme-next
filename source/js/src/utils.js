@@ -31,6 +31,18 @@ NexT.utils = NexT.$u = {
       });
 
     $('.fancybox').fancybox({
+      // Should display navigation arrows at the screen edges
+      arrows: false,
+      buttons: [
+        // "zoom",
+        //"share",
+        //"slideShow",
+        //"fullScreen",
+        //"download",
+        // "thumbs",
+        "close"
+      ],
+      cursor: "pointer",
       helpers: {
         overlay: {
           locked: false
@@ -41,8 +53,8 @@ NexT.utils = NexT.$u = {
 
   lazyLoadPostsImages: function() {
     $('#posts').find('img').lazyload({
-      //placeholder: '/images/loading.gif',
-      effect   : 'fadeIn',
+      placeholder: '/images/loading/loading_480px_3.gif',
+      effect: 'fadeIn',
       threshold: 0
     });
   },
