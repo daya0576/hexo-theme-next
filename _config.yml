@@ -163,7 +163,7 @@ social:
   GitHub: https://github.com/daya0576 || github
   E-Mail: mailto:daya0576@gmail.com || envelope
   Instagram: https://instagram.com/daya0576 || instagram
-  Wechat: https://instagram.com/daya0576 || wechat
+  Wechat: /images/wechat.JPG || wechat
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -190,11 +190,12 @@ social_icons:
 # Blog rolls
 links_icon: link
 links_title: Links
-#links_layout: block
-links_layout: inline
+links_layout: block
+#links_layout: inline
 links:
   laike9m's blog: https://laike9m.com/
   Hypers 陈惠超 超人~: https://chenhuichao.com/
+  宇宙湾: https://yuzhouwan.com/
 
 # Sidebar Avatar
 avatar:
