@@ -1,0 +1,3 @@
+[submodule "source/lib/Han"]
+	path = source/lib/Han
+	url = https://github.com/theme-next/theme-next-han
