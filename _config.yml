@@ -117,11 +117,11 @@ index_with_subtitle: false
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
-  home: / || home
+  home: / || terminal
 #  categories: /categories/ || th
-  archives: /archives/ || archive
-  tags: /tags/ || tags
-  about: /about/ || user
+  archives: /archives/ || folder-o
+  tags: /tags/ || hashtag
+  about: /about/ || star-half-o
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -161,7 +161,7 @@ site_state: true
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/daya0576 || github
-  E-Mail: mailto:daya0576@gmail.com || envelope
+  E-Mail: mailto:daya0576@gmail.com || envelope-o
   Instagram: https://instagram.com/daya0576 || instagram
   Wechat: /images/wechat.JPG || wechat
   #Google: https://plus.google.com/yourname || google
@@ -890,7 +890,7 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css
+  fontawesome: https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
