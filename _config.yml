@@ -100,7 +100,7 @@ footer:
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -316,8 +316,8 @@ codeblock:
 
 # Reward
 reward_comment: Donate comment here
-wechatpay: /images/wechatpay.jpg
-alipay: /images/alipay.jpg
+wechatpay: /images/pay/wechatpay.jpg
+alipay: /images/pay/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
 # Related popular posts
@@ -571,7 +571,7 @@ needmoreshare2:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: InFIQ8ztFiGvNgZL7iOkZft-rDCgQedsOHVgibI38-g
 
 # Google Analytics
 google_analytics: UA-79497021-2

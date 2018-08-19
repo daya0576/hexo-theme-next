@@ -1,0 +1,8 @@
+[submodule "lazyload"]
+    path = source/lib/jquery_lazyload
+    url = https://github.com/theme-next/theme-next-jquery-lazyload
+
+[submodule "fancybox"]
+    path = source/lib/fancybox
+    url = https://github.com/theme-next/theme-next-fancybox3
+
