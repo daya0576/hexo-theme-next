@@ -119,7 +119,7 @@ index_with_subtitle: false
 menu:
   home: / || terminal
 #  categories: /categories/ || th
-  archives: /archives/ || folder-o
+  archives: /archives/ || list-ul
   tags: /tags/ || hashtag
   about: /about/ || star-half-o
   #schedule: /schedule/ || calendar
