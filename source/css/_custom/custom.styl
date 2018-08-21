@@ -1,11 +1,42 @@
-.site-overview {
+// 侧边栏的不透明
+.site-overview{
   opacity: 0.5;
+}
+//.header-inner {
+//  opacity: 1;
+//}
+.site-overview, .header-inner {
   -webkit-transition: all .2s ease-in;
   -moz-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
   transition: all .2s ease-in;
 }
 
-.site-overview:hover {
+.site-overview:hover, .header-inner:hover {
   opacity: 1;
+}
+
+// disable top bar
+.headband {
+  display: none;
+}
+
+
+// article <p> margin
+p { margin: 0 0 5px 0; }
+
+// quote
+code {
+  background: #eee8d5;
+}
+
+// background & line-height
+body {
+  line-height: 1.7;
+  background: #fff;
+}
+
+
+img {
+  max-height: 450px;
 }

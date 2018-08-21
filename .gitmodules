@@ -6,3 +6,6 @@
     path = source/lib/fancybox
     url = https://github.com/theme-next/theme-next-fancybox3
 
+[submodule "Han"]
+	path = source/lib/Han
+	url = https://github.com/theme-next/theme-next-han
