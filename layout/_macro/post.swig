@@ -311,15 +311,19 @@
             </a>
           </div>
           <!--/noindex-->
+
         {% elif post.excerpt  %}
+          {# 摘要的形式 #}
           {{ post.excerpt }}
+
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
               {{ __('post.read_more') }} &raquo;
             </a>
           </div>
-          <!--/noindex-->
+
+
         {% elif theme.auto_excerpt.enable %}
           {% set content = post.content | striptags %}
           {{ content.substring(0, theme.auto_excerpt.length) }}
