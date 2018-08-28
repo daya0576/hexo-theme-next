@@ -1,11 +1,37 @@
-// 侧边栏的不透明
-.site-overview {
-  opacity: 0.5;
+// 侧边栏
+.header-inner {
+  //background-image: url("/images/site-meta-bg/sky.jpg");
+  //background-size: 300px;
+  opacity: 1;
 }
 
-.header-inner {
-  opacity: 0.8;
+
+//.site-nav .menu .menu-item a {
+//  color: #f9f9f9;
+//  border-bottom: none;
+//}
+//.site-nav .menu .menu-item a:hover {
+//  border-bottom: none;
+//}
+//.site-nav .menu .menu-item a:hover, .site-nav .menu .menu-item-active a {
+//  background: rgba(0, 0, 0, 0.2);
+//}
+
+// 侧边栏 - 上
+.site-meta {
+  background-color: rgba(0,19,32, 0.8);
 }
+
+// 侧边栏 - 下
+.site-overview {
+  opacity: 0.3;
+}
+
+.local-search-pop-overlay {
+  opacity: 1;
+  background: none;
+}
+
 
 .site-overview, .header-inner {
   -webkit-transition: all .2s ease-in;
@@ -19,13 +45,11 @@
 }
 
 // disable top bar
-.headband {
-  display: none;
-}
+.headband { display: none;}
 
-.post-footer {
-  padding: 30px 0 20px 0;
-}
+// 文章之间的间隔
+.post-footer { padding: 30px 0 20px 0;}
+.post-button { padding-top: 20px;}
 
 // article <p> margin
 p {
@@ -34,13 +58,13 @@ p {
 
 // quote
 code {
-  padding: 2px 4px 2px 4px
+  padding: 3px 4px 2px 4px
   background: #eee8d5;
 }
 
 // background & line-height
 body {
-  line-height: 1.6;
+  line-height: 1.5;
   background: #fff;
 }
 

@@ -323,6 +323,10 @@
             </a>
           </div>
 
+          {#<a href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">#}
+            {#more...#}
+          {#</a>#}
+
 
         {% elif theme.auto_excerpt.enable %}
           {% set content = post.content | striptags %}
