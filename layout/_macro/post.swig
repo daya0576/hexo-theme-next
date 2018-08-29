@@ -315,7 +315,7 @@
         {% elif post.excerpt  %}
           {# 摘要的形式 #}
           {{ post.excerpt }}
-          <div style="height: 12px"></div>
+          <div style="height: 8px"></div>
           <a class="post-button" href="{{ url_for(post.path) }}"><b>More..</b></a>
 
         {% elif theme.auto_excerpt.enable %}

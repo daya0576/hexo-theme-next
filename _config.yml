@@ -132,7 +132,7 @@ menu_settings:
   badges: false
 
 archive_generator:
-  per_page: 0
+  per_page: 20
   yearly: true
   monthly: true
 
