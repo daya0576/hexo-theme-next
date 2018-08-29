@@ -315,8 +315,8 @@
         {% elif post.excerpt  %}
           {# 摘要的形式 #}
           {{ post.excerpt }}
-          <div style="height: 10px"></div>
-          <a href="{{ url_for(post.path) }}"><b>More..</b></a>
+          <div style="height: 12px"></div>
+          <a class="post-button" href="{{ url_for(post.path) }}"><b>More..</b></a>
 
         {% elif theme.auto_excerpt.enable %}
           {% set content = post.content | striptags %}
