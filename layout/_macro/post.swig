@@ -315,7 +315,6 @@
         {% elif post.excerpt  %}
           {# 摘要的形式 #}
           {{ post.excerpt }}
-          <div style="height: 8px"></div>
           <a class="post-button" href="{{ url_for(post.path) }}"><b>More..</b></a>
 
         {% elif theme.auto_excerpt.enable %}
@@ -452,7 +451,7 @@
       {% set isLast = loop.index % page.per_page === 0 %}
       {% if is_index and not isLast %}
          {#<div class="post-eof"></div>#}
-        <hr>
+         <div style="height: 20px"></div>
       {% endif %}
     </footer>
   </div>
