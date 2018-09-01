@@ -60,9 +60,16 @@
     //margin: auto;
     //padding: 2px;
     //border: 1px solid $gray-lighter;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    //box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
   }
 }
 
-.posts-expand .post-body .fancybox img { margin: 0 auto 10px; }
+.posts-expand .post-body .fancybox img {
+  margin: 0 auto 10px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+.posts-expand .post-body .fancybox img:hover {
+  margin: 0 auto 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+}
 .posts-expand .post-body img { margin: 0 auto 10px; }
