@@ -401,7 +401,7 @@ font:
   global:
     external: true
     family: Hiragino Sans GB
-    size: 14
+    size: 15
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
   # Fallback to `global` font settings.
@@ -427,7 +427,7 @@ font:
   codes:
     external: true
     family:
-    size:
+    size: 15
 
 
 # ---------------------------------------------------------------
@@ -878,7 +878,7 @@ vendors:
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
-  lazyload:
+  lazyload: https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
