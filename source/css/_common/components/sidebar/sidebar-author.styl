@@ -15,18 +15,18 @@ if hexo-config('avatar.rounded') {
 }
 
 if hexo-config('avatar.rotated') {
-.site-author-image {
-  transition: transform 0.75s;
-  transform:rotate(0deg);
-}
+  .site-author-image {
+    transition: transform 0.75s;
+    transform: rotate(0deg);
+  }
 
-.site-author-image:hover {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  transform: rotate(360deg);
+  .site-author-image:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
-
 .site-author-name {
   margin: $site-author-name-margin;
   text-align: $site-author-name-align;
