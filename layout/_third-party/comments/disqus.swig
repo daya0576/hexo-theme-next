@@ -22,13 +22,14 @@
       }
       {% if theme.disqus.lazyload %}
         $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
+          var windowHeight = $(window).height();
+          var offsetTop = $('#comments').offset().top - windowHeight;
           if (offsetTop <= 0) {
             // load directly when there's no a scrollbar
             loadComments();
           } else {
             $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
+              var scrollTop = document.documentElement.scrollTop + windowHeight;
               if (scrollTop >= offsetTop) {
                 $(window).off('.disqus_scroll');
                 loadComments();
