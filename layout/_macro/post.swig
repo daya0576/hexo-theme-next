@@ -316,7 +316,7 @@
           {# 摘要的形式 #}
           {{ post.excerpt }}
           <!--noindex-->
-          <a class="post-button" href="{{ url_for(post.path) }}"><b>More..</b></a>
+          <a class="post-button" href="{{ url_for(post.path) }}"><b>more..</b></a>
           <!--/noindex-->
 
         {% elif theme.auto_excerpt.enable %}
