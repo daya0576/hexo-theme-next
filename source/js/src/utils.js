@@ -55,7 +55,7 @@ NexT.utils = NexT.$u = {
     $('#posts').find('img').lazyload({
       placeholder: '/images/loading/loading_480px_3.gif',
       effect: 'fadeIn',
-      threshold: 0
+      threshold: 500
     });
   },
 
