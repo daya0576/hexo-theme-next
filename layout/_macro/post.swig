@@ -151,7 +151,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                <a style="color: #999 !important;" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
                   <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
                 </a>
               </span>
