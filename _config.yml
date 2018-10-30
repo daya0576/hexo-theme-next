@@ -279,7 +279,7 @@ auto_excerpt:
 
 # Post meta display settings
 post_meta:
-  item_text: true
+  item_text: false
   created_at: true
   updated_at:
     enabled: false
@@ -777,7 +777,7 @@ reading_progress:
 
 # Use velocity to animate everything.
 motion:
-  enable: false
+  enable: true
   async: true
   transition:
     # Transition variants:
@@ -787,10 +787,10 @@ motion:
     # slideUpIn | slideUpOut | slideDownIn | slideDownOut | slideLeftIn | slideLeftOut | slideRightIn | slideRightOut
     # slideUpBigIn | slideUpBigOut | slideDownBigIn | slideDownBigOut | slideLeftBigIn | slideLeftBigOut | slideRightBigIn | slideRightBigOut
     # perspectiveUpIn | perspectiveUpOut | perspectiveDownIn | perspectiveDownOut | perspectiveLeftIn | perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut
-    post_block: fadeIn
-    post_header: fadeIn
-    post_body: fadeIn
-    coll_header: fadeIn
+    post_block:
+    post_header:
+    post_body:
+    coll_header:
     # Only for Pisces | Gemini.
     sidebar: fadeIn
 
