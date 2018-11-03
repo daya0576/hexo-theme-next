@@ -777,7 +777,7 @@ reading_progress:
 
 # Use velocity to animate everything.
 motion:
-  enable: true
+  enable: false
   async: true
   transition:
     # Transition variants:
@@ -792,7 +792,7 @@ motion:
     post_body:
     coll_header:
     # Only for Pisces | Gemini.
-    sidebar: fadeIn
+    sidebar:
 
 # Fancybox. There is support for old version 2 and new version 3.
 # Please, choose only any one variant, do not need to install both.
@@ -894,7 +894,7 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
+  fontawesome:
 
   # Internal version: 1
   # https://www.algolia.com
