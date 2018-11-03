@@ -288,7 +288,7 @@ auto_excerpt:
 
 # Read more button
 # If true, the read more button would be displayed in excerpt section
-read_more_btn: true
+read_more_btn: false
 
 # Post meta display settings
 post_meta:
@@ -939,7 +939,8 @@ vendors:
   # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
-  fontawesome: https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
+#  fontawesome: https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
+  fontawesome:
 
   # Internal version: 1
   # https://www.algolia.com
