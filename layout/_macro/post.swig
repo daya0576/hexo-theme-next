@@ -273,7 +273,7 @@
             #}</div>
           {% endif %}
 
-    </div>
+        </div>
       </header>
     {% endif %}
 
@@ -305,18 +305,26 @@
         {% if post.description and theme.excerpt_description %}
           {{ post.description }}
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
-              {{ __('post.read_more') }} &raquo;
-            </a>
-          </div>
+          {% if theme.read_more_btn %}
+            <div class="post-button text-center">
+              <a class="btn" href="{{ url_for(post.path) }}">
+                {{ __('post.read_more') }} &raquo;
+              </a>
+            </div>
+          {% endif %}
           <!--/noindex-->
 
         {% elif post.excerpt  %}
           {# 摘要的形式 #}
           {{ post.excerpt }}
           <!--noindex-->
-          <a class="post-button" href="{{ url_for(post.path) }}"><b>more..</b></a>
+          {% if theme.read_more_btn %}
+            <div class="post-button text-center">
+              <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
+                {{ __('post.read_more') }} &raquo;
+              </a>
+            </div>
+         {% endif %}
           <!--/noindex-->
 
         {% elif theme.auto_excerpt.enable %}
@@ -324,11 +332,13 @@
           {{ content.substring(0, theme.auto_excerpt.length) }}
           {% if content.length > theme.auto_excerpt.length %}...{% endif %}
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
-              {{ __('post.read_more') }} &raquo;
-            </a>
-          </div>
+          {% if theme.read_more_btn %}
+            <div class="post-button text-center">
+              <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
+                {{ __('post.read_more') }} &raquo;
+              </a>
+            </div>
+          {% endif %}
           <!--/noindex-->
         {% else %}
           {% if post.type === 'picture' %}
