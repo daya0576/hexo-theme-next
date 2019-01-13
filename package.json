@@ -37,6 +37,7 @@
     "stylint": "^1.5.9"
   },
   "dependencies": {
+    "hexo-filter-optimize": "file:../../../WebstormProjects/hexo-filter-optimize",
     "hexo-generator-feed": "^1.2.2",
     "hexo-generator-search": "^2.2.5",
     "hexo-generator-searchdb": "^1.0.8",
