@@ -18,7 +18,7 @@ $black-light  = #333
 $black-dim    = #24292e
 $black-deep   = #001320
 $red          = #ff2a2a
-$blue-bright  = #87daff
+$blue-bright  = #039be5
 $blue         = #2d466e
 $blue-deep    = #262a30
 $orange       = #fc6423
@@ -31,10 +31,10 @@ $orange       = #fc6423
 $text-color                   = $black-dim
 
 // Global link color.
-$link-color                   = $black-dim
-$link-hover-color             = $black-deep
-$link-decoration-color        = $grey-dark
-$link-decoration-hover-color  = $black-deep
+$link-color                   = $blue
+$link-hover-color             = $blue-bright
+$link-decoration-color        = $blue
+$link-decoration-hover-color  = $blue-bright
 
 // Global border color.
 $border-color                 = $grey-light
@@ -56,7 +56,7 @@ get_font_family(config) {
 }
 
 // Font families.
-$font-family-chinese      = "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei"
+$font-family-chinese      = "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei"
 
 $font-family-base         = $font-family-chinese, sans-serif
 $font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
@@ -85,7 +85,7 @@ $font-weight-bolder       = 600
 
 
 // Font size
-$font-size-base           = 15px
+$font-size-base           = 16px
 $font-size-base           = unit(hexo-config('font.global.size'), px) if hexo-config('font.global.size') is a 'unit'
 $font-size-small          = $font-size-base - 1px
 $font-size-smaller        = $font-size-base - 1px
