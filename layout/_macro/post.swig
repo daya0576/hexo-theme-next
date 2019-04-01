@@ -314,9 +314,9 @@
       <!--/noindex-->
 
       {% elif post.excerpt  %}
-      {# 摘要的形式 #}
+      {# 摘要的形式 <a class="post-button" href="{{ url_for(post.path) }}"><b>more..</b></a> #}
       {{ post.excerpt }}
-      <a class="post-button" href="{{ url_for(post.path) }}"><b>more..</b></a>
+
 
       {% elif theme.auto_excerpt.enable %}
       {% set content = post.content | replace('<td class="gutter">.*?</td>', "", "g") | striptags %}
