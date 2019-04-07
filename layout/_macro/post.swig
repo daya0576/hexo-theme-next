@@ -65,7 +65,7 @@
         </{% if theme.seo %}h2{% else %}h1{% endif %}>
       {% endif %}
 
-        {% if not is_index %}
+        {% if true %}
           <div class="post-meta">
           <span class="post-time">
 
