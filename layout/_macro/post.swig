@@ -81,24 +81,24 @@
             <span class="post-meta-item-text">{{ __('post.posted') }}</span>
           {% endif %}
 
-                {% if !date_diff && time_diff && theme.post_meta.updated_at.enabled && theme.post_meta.updated_at.another_day %}
-          {% set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
-          {% else %}
-            {% set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
-          {% endif %}
+              {% if !date_diff && time_diff && theme.post_meta.updated_at.enable && theme.post_meta.updated_at.another_day %}
+                {% set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
+              {% else %}
+                {% set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
+              {% endif %}
 
                 <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
                 #}{{ date(post.date) -}}
                 </time>
         {% endif %}
 
-              {% if theme.post_meta.updated_at.enabled && datetime_diff %}
-        {% set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
+            {% if theme.post_meta.updated_at.enable && datetime_diff %}
+              {% set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
 
-        {% if display_updated or !theme.post_meta.created_at %}
-        {% if theme.post_meta.created_at and theme.post_meta.updated_at.enabled %}
-          <span class="post-meta-divider">|</span>
-        {% endif %}
+              {% if display_updated or !theme.post_meta.created_at %}
+                {% if theme.post_meta.created_at and theme.post_meta.updated_at.enable %}
+                <span class="post-meta-divider">|</span>
+                {% endif %}
 
                   <span class="post-meta-item-icon">
                     <i class="fa fa-calendar-check-o"></i>
@@ -139,68 +139,57 @@
               </span>
       {% endif %}
 
-      {% if post.comments %}
-        {% if theme.facebook_comments_plugin.enable %}
-          <span class="post-comments-count">
-                  <span class="post-meta-divider">|</span>
-                  <span class="post-meta-item-icon">
-                    <i class="fa fa-comment-o"></i>
-                  </span>
-                  <a style="color: #999 !important;" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                    <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                    <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
-                  </a>
-                </span>
-        {% elseif theme.disqus.enable and theme.disqus.count %}
-          <span class="post-comments-count">
-                  <span class="post-meta-divider">|</span>
-                  <span class="post-meta-item-icon">
-                    <i class="fa fa-comment-o"></i>
-                  </span>
-                  <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  {% if __('disqus') !== 'disqus' -%}
-                    <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                  {% endif %}
-                    <span class="post-comments-count disqus-comment-count"
-                          data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
-                  </a>
-                </span>
-        {% elseif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
-          <span class="post-meta-divider">|</span>
-          <span class="post-meta-item-icon">
+          {% if post.comments %}
+            {% macro comments() %}
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-          {% if is_post() %}
-            <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-              <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span>
-            </a>
-          {% else %}
-            <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-              <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentsCount" ></span>
-            </a>
+            {% endmacro %}
+            {% if theme.facebook_comments_plugin.enable %}
+              {{ comments() }}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
+                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
+                </a>
+              </span>
+            {% elif theme.disqus.enable and theme.disqus.count %}
+              {{ comments() }}
+
+                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
+                </a>
+              </span>
+            {% elif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
+              {{ comments() }}
+              {% if is_post() %}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
+                <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
+                </a>
+              {% else %}
+
+                <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
+                </a>
+              {% endif %}
+            {% elif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
+              {{ comments() }}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
+                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+                </a>
+              </span>
+            {% elif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
+              {{ comments() }}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
+                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+                </a>
+              </span>
+            {% endif %}
           {% endif %}
-        {% elseif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
-          <span class="post-comments-count">
-                  <span class="post-meta-divider">|</span>
-                  <span class="post-meta-item-icon">
-                    <i class="fa fa-comment-o"></i>
-                  </span>
-                  <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                    <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentsCount"></span>
-                  </a>
-                </span>
-        {% elseif theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
-          <span class="post-comments-count">
-                  <span class="post-meta-divider">|</span>
-                  <span class="post-meta-item-icon">
-                    <i class="fa fa-comment-o"></i>
-                  </span>
-                  <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                    <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
-                  </a>
-                </span>
-        {% endif %}
-      {% endif %}
 
       {# LeanCould PageView #}
       {% if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
@@ -281,19 +270,15 @@
 
   {% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
-    {# Gallery support #}
-  {% if post.photos and post.photos.length %}
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    {% set COLUMN_NUMBER = 3 %}
-    {% for photo in post.photos %}
-      {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
-      <a class="post-gallery-img fancybox"
-         href="{{ url_for(photo) }}" rel="gallery_{{ post._id }}"
-         itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-        <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
-      </a>
-      {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
-    {% endfor %}
+      {# Gallery support #}
+      {% if post.photos and post.photos.length %}
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          {% set COLUMN_NUMBER = 3 %}
+          {% for photo in post.photos %}
+            {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
+              <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
+            {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
+          {% endfor %}
 
     {# Append end tag for `post-gallery-row` when (photos size mod COLUMN_NUMBER) is less than COLUMN_NUMBER #}
     {% if post.photos.length % COLUMN_NUMBER > 0 %}</div>{% endif %}
@@ -349,22 +334,20 @@
   {% endif %}
 
 
-  {% if theme.wechat_subscriber.enabled and not is_index %}
-    <div>
+    {% if theme.wechat_subscriber.enable and not is_index %}
       {% include '../_partials/post/wechat-subscriber.swig' %}
-    </div>
-  {% endif %}
+    {% endif %}
 
-  {% if page.reward === undefined and theme.reward.enable %}
-    {% set reward_able = true %}
-  {% else %}
-    {% set reward_able = page.reward %}
-  {% endif %}
-  {% if reward_able and (theme.reward.alipay or theme.reward.wechatpay or theme.reward.bitcoin) and not is_index %}
-    <div>
-      {% include '../_partials/post/reward.swig' %}
-    </div>
-  {% endif %}
+    {% if page.reward === undefined and theme.reward_settings.enable %}
+      {% set reward_able = true %}
+    {% else %}
+      {% set reward_able = page.reward %}
+    {% endif %}
+    {% if reward_able and not is_index %}
+      <div>
+        {% include '../_partials/post/reward.swig' %}
+      </div>
+    {% endif %}
 
   {% if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
     <div>
@@ -381,8 +364,8 @@
       </div>
     {% endif %}
 
-    {% if not is_index %}
-      {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare and theme.baidushare.type === "button") %}
+      {% if not is_index %}
+      {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare and theme.baidushare.type === "button") %}
         <div class="post-widgets">
           {% if theme.rating.enable %}
             <div class="wp_rating">
@@ -409,25 +392,30 @@
             </div>
           {% endif %}
 
-          {% if (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare.type === "button") %}
-            {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-              <span class="post-meta-divider">|</span>
-            {% endif %}
-            <div class="social_share">
-              {% if theme.baidushare.type === "button" %}
-                <div>
-                  {% include '../_partials/share/baidushare.swig' %}
-                </div>
-              {% endif %}
-              {% if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
-                <div id="needsharebutton-postbottom">
-                 <span class="btn">
-                    <i class="fa fa-share-alt" aria-hidden="true"></i>
-                 </span>
-                </div>
-              {% endif %}
-            </div>
+        {% if theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare.type === "button") %}
+          {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
+            <span class="post-meta-divider">|</span>
           {% endif %}
+          <div class="social_share">
+            {% if theme.likely.enable %}
+              <div>
+                {% include '../_partials/share/likely.swig' %}
+              </div>
+            {% endif %}
+            {% if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            {% endif %}
+            {% if theme.baidushare.type === "button" %}
+              <div>
+                {% include '../_partials/share/baidushare.swig' %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
         </div>
       {% endif %}
     {% endif %}

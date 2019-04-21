@@ -1,4 +1,6 @@
-// 侧边栏
+///////////
+// 侧边栏 //
+///////////
 .header-inner {
   background-image: url("/images/site-meta-bg/sky.jpg");
   background-size: cover;
@@ -23,12 +25,15 @@
   opacity: 0.2;
 }
 
+
+// 搜索
 .local-search-pop-overlay {
   opacity: 1;
   background: none;
 }
 
 
+//  头像
 .site-overview, .header-inner {
   -webkit-transition: all .2s ease-in;
   -moz-transition: all .2s ease-in;
@@ -48,10 +53,6 @@
 // 文章之间的间隔
 .post-footer {
   padding: 20px 0 15px 0;
-}
-
-.post-button {
-  padding-top: 20px;
 }
 
 .post:last-child {
@@ -96,8 +97,41 @@ img {
 }
 
 
-// 归档的标题样子
+// 归档的标题样式
+.posts-collapse .collection-title {
+  margin: 40px 0 20px 0;
+}
+.posts-collapse .post {
+  margin: 0;
+}
+
+.posts-collapse .post-header {
+  border-bottom: none;
+}
+
 .posts-collapse .post-title {
   font-size: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+.posts-collapse .post-meta {
+  color: #666;
+}
+.posts-collapse .post-title a, .posts-collapse .post-title span.exturl {
+  color: #24292e;
+}
+
+
+// 图片
+.posts-expand .post-body .fancybox img {
+  //margin: 0 auto 20px;
+  margin: 5px 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+}
+
+.posts-expand .post-body .fancybox img:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.posts-expand .post-body img {
+  margin: 0 auto 10px;
 }
