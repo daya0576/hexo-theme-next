@@ -66,11 +66,6 @@
   box-shadow: none;
 }
 
-// 标题的字体:
-.posts-expand .post-title {
-  font-size: 24px;
-}
-
 // article <p> margin
 p {
   margin: 16px 0;
@@ -91,12 +86,18 @@ img {
   max-height: 350px;
 }
 
-.post-header .post-meta {
-  margin-top: -22px;
-
-}
-
-.post-header .post-meta .post-comments-count,.disqus-comment-count {
+.post-header .post-meta .post-comments-count, .disqus-comment-count {
   color: #999;
 }
 
+.post-header .post-title {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+
+
+// 归档的标题样子
+.posts-collapse .post-title {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
