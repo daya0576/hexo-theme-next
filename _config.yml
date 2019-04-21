@@ -290,7 +290,7 @@ back2top:
 chat:
   enable: false
   #service: chatra
-  #service: tidio
+  service: tidio
   icon: comment # icon in Font Awesome 4, set false to disable icon
   text: Chat # button text, change it as you wish
 
@@ -921,8 +921,9 @@ chatra:
 # See: https://www.tidiochat.com
 # Dashboard: https://www.tidiochat.com/panel/dashboard
 tidio:
-  enable: false
-  key: # Public Key, get it from Dashboard, See: https://www.tidiochat.com/panel/settings/developer
+  enable: true
+  # Public Key, get it from Dashboard, See: https://www.tidiochat.com/panel/settings/developer
+  key: aib2omsaxiob81nmuvf7yzqf6igujcrw
 
 
 # ---------------------------------------------------------------
