@@ -7,3 +7,6 @@
 [submodule "source/lib/jquery_lazyload"]
 	path = source/lib/jquery_lazyload
 	url = https://github.com/theme-next/theme-next-jquery-lazyload.git
+[submodule "source/lib/fastclick"]
+	path = source/lib/fastclick
+	url = https://github.com/theme-next/theme-next-fastclick
