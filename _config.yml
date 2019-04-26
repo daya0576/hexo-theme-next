@@ -766,10 +766,10 @@ needmoreshare2:
 #growingio_analytics: #your projectId
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-google_site_verification: InFIQ8ztFiGvNgZL7iOkZft-rDCgQedsOHVgibI38-g
+#google_site_verification: InFIQ8ztFiGvNgZL7iOkZft-rDCgQedsOHVgibI38-g
 
 # Google Analytics
-google_analytics: UA-79497021-2
+#google_analytics: UA-79497021-2
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster
