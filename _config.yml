@@ -452,7 +452,7 @@ tagcloud:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
   host:
@@ -472,7 +472,7 @@ font:
   headings:
     external: true
     family:
-    size:
+    size: 24
 
   # Font settings for posts.
   # Fallback to `global` font settings.
