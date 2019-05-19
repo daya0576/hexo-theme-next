@@ -992,7 +992,7 @@ motion:
     # slideUpBigIn | slideUpBigOut | slideDownBigIn | slideDownBigOut | slideLeftBigIn | slideLeftBigOut | slideRightBigIn | slideRightBigOut
     # perspectiveUpIn | perspectiveUpOut | perspectiveDownIn | perspectiveDownOut | perspectiveLeftIn | perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut
     post_block: fadeIn
-    post_header: fadeIn
+    post_header:
     post_body: fadeIn
     coll_header: fadeIn
     # Only for Pisces | Gemini.
