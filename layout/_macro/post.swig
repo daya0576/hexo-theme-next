@@ -73,13 +73,14 @@
               {% set time_diff = time(post.date) != time(post.updated) %}
               {% set datetime_diff = date_diff or time_diff %}
 
-              {% if theme.post_meta.created_at %}
-          <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-o"></i>
-                </span>
-                {% if theme.post_meta.item_text %}
-            <span class="post-meta-item-text">{{ __('post.posted') }}</span>
-          {% endif %}
+          {% if theme.post_meta.created_at %}
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              {% if theme.post_meta.item_text %}
+                <span class="post-meta-item-text">{{ __('post.posted') }}</span>
+              {% endif %}
 
               {% if !date_diff && time_diff && theme.post_meta.updated_at.enable && theme.post_meta.updated_at.another_day %}
                 {% set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
@@ -92,8 +93,8 @@
                 </time>
         {% endif %}
 
-            {% if theme.post_meta.updated_at.enable && datetime_diff %}
-              {% set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
+          {% if theme.post_meta.updated_at.enable && datetime_diff %}
+            {% set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
 
               {% if display_updated or !theme.post_meta.created_at %}
                 {% if theme.post_meta.created_at and theme.post_meta.updated_at.enable %}
@@ -141,8 +142,7 @@
 
           {% if post.comments %}
             {% macro comments() %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
@@ -174,13 +174,6 @@
                   <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
                 </a>
               {% endif %}
-            {% elif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
-              {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
-                </a>
-              </span>
             {% elif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
               {{ comments() }}
                 <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
@@ -191,65 +184,58 @@
             {% endif %}
           {% endif %}
 
-      {# LeanCould PageView #}
-      {% if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
-        <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-                 <span class="post-meta-divider">|</span>
-                 <span class="post-meta-item-icon">
-                   <i class="fa fa-eye"></i>
-                 </span>
-                 {% if theme.post_meta.item_text %}
-                   <span class="post-meta-item-text">{{__('post.views') + __('symbol.colon') }}</span>
-                 {% endif %}
-                   <span class="leancloud-visitors-count"></span>
-               </span>
-      {% endif %}
-
-      {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
-        <span class="post-meta-divider">|</span>
-        <span class="post-meta-item-icon"
-              {% if not theme.post_meta.item_text %} title="{{ __('post.views') }}" {% endif %}>
-              <i class="fa fa-{{ theme.busuanzi_count.post_views_icon }}"></i>
-              {% if theme.post_meta.item_text %} {{__('post.views') + __('symbol.colon') }} {% endif %}
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+          {# LeanCloud PageView #}
+          {% if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
+            <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
-      {% endif %}
-
-      {% if config.symbols_count_time.symbols or config.symbols_count_time.time %}
-        <div class="post-symbolscount">
-          {% if not theme.symbols_count_time.separated_meta %}
-            <span class="post-meta-divider">|</span>
+              {% if theme.post_meta.item_text %}
+                <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
+              {% endif %}
+                <span class="leancloud-visitors-count"></span>
+            </span>
           {% endif %}
 
+          {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon"
+              {% if not theme.post_meta.item_text %} title="{{ __('post.views') }}" {% endif %}>
+                <i class="fa fa-{{ theme.busuanzi_count.post_views_icon }}"></i>
+                {% if theme.post_meta.item_text %} {{ __('post.views') + __('symbol.colon') }} {% endif %}
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          {% endif %}
+
+          {% if theme.symbols_count_time.separated_meta %}<br/>{% endif %}
           {% if config.symbols_count_time.symbols %}
-            <span class="post-meta-item-icon">
-                    <i class="fa fa-file-word-o"></i>
-                  </span>
-            {% if theme.symbols_count_time.item_text_post %}
-              <span class="post-meta-item-text">{{ __('symbols_count_time.count') + __('symbol.colon') }}</span>
-            {% endif %}
-            <span title="{{ __('symbols_count_time.count') }}">{#
-                  #}{{ symbolsCount(post.content) }}{#
-                #}</span>
-          {% endif %}
-
-          {% if config.symbols_count_time.symbols and config.symbols_count_time.time %}
-            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              {% if theme.symbols_count_time.item_text_post %}
+                <span class="post-meta-item-text">{{ __('symbols_count_time.count') + __('symbol.colon') }}</span>
+              {% endif %}
+              <span title="{{ __('symbols_count_time.count') }}">{#
+              #}{{ symbolsCount(post) }}{#
+            #}</span>
+            </span>
           {% endif %}
 
           {% if config.symbols_count_time.time %}
-            <span class="post-meta-item-icon">
-                    <i class="fa fa-clock-o"></i>
-                  </span>
-            {% if theme.symbols_count_time.item_text_post %}
-              <span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>
-            {% endif %}
-            <span title="{{ __('symbols_count_time.time') }}">{#
-                  #}{{ symbolsTime(post.content, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
-                #}</span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              {% if theme.symbols_count_time.item_text_post %}
+                <span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>
+              {% endif %}
+              <span title="{{ __('symbols_count_time.time') }}">{#
+              #}{{ symbolsTime(post, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
+            #}</span>
+            </span>
           {% endif %}
-        </div>
-      {% endif %}
 
       {% if post.description and (not theme.excerpt_description or not is_index) %}
         <div class="post-description">{#
@@ -262,13 +248,10 @@
     </header>
   {% endif %}
 
-  {#################}
-  {### POST BODY ###}
-  {#################}
-
-  <div class="post-body{% if theme.han %} han-init-context{% endif %}
-
-  {% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
+    {#################}
+    {### POST BODY ###}
+    {#################}
+    <div class="post-body{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
       {# Gallery support #}
       {% if post.photos and post.photos.length %}
@@ -357,9 +340,13 @@
 
   <footer class="post-footer">
     {% if post.tags and post.tags.length and not is_index %}
-      <div class="post-tags">
+      {% if theme.tag_icon %}
+          {% set tag_indicate = '<i class="fa fa-tag"></i>' %}
+        {% else %}
+          {% set tag_indicate = '#' %}
+        {% endif %}<div class="post-tags">
         {% for tag in post.tags %}
-          <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+          <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
         {% endfor %}
       </div>
     {% endif %}
