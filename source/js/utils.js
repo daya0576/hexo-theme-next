@@ -28,11 +28,12 @@ NexT.utils = NexT.$u = {
           }
         }
 
-        if (imageTitle) {
-          $imageWrapLink.append('<p class="image-caption">' + imageTitle + '</p>');
-          // Make sure img title tag will show correctly in fancybox
-          $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
-        }
+        // disable image title
+        // if (imageTitle) {
+        //   $imageWrapLink.append('<p class="image-caption">' + imageTitle + '</p>');
+        //   // Make sure img title tag will show correctly in fancybox
+        //   $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
+        // }
       });
 
     $('.fancybox').fancybox({
