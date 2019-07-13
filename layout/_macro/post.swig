@@ -114,32 +114,6 @@
       {% endif %}
       </span>
 
-      {% if post.categories and post.categories.length and theme.post_meta.categories %}
-        <span class="post-category" >
-              {% if theme.post_meta.created_at or theme.post_meta.updated_at %}
-                <span class="post-meta-divider">|</span>
-              {% endif %}
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-folder-o"></i>
-                </span>
-                {% if theme.post_meta.item_text %}
-                  <span class="post-meta-item-text">{{ __('post.in') }}</span>
-                {% endif %}
-          {% for cat in post.categories %}
-            <span itemprop="about" itemscope itemtype="http://schema.org/Thing">{#
-                  #}<a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">{#
-                    #}<span itemprop="name">{{ cat.name }}</span>{#
-                  #}</a>{#
-                #}</span>
-
-            {% set cat_length = post.categories.length %}
-            {% if cat_length > 1 and loop.index !== cat_length %}
-              {{ __('symbol.comma') }}
-            {% endif %}
-          {% endfor %}
-              </span>
-      {% endif %}
-
           {% if post.comments %}
             {% macro comments() %}
               <span class="post-meta-item">
