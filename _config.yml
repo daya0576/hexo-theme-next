@@ -420,7 +420,7 @@ custom_scrollbar: false
 # Custom Logo
 # Do not support Scheme Mist currently.
 custom_logo:
-  enable: false
+  enable: true
   image: #/uploads/custom-logo.jpg
 
 # Code Highlight theme
