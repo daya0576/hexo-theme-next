@@ -19,7 +19,6 @@
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
   {% include '_partials/head/head-unique.swig' %}
   <title>{% block title %}{% endblock %}</title>
-  {% include '_third-party/analytics/index.swig' %}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
 
@@ -122,5 +121,6 @@
   {% include '_third-party/copy-code.swig' %}
   {% include '_third-party/chatra.swig' %}
   {% include '_third-party/tidio.swig' %}
+  {% include '_third-party/analytics/index.swig' %}
 </body>
 </html>
