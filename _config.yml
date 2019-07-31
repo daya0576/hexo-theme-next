@@ -587,10 +587,6 @@ reading_progress:
   color: "#37c6c0"
   height: 2px
 
-# Baidu Analytics ID
-baidu_analytics: f08a1f7937d18f480bef30f531b4289f
-#baidu_analytics:
-
 # Google Calendar
 # Share your recent schedule to others via calendar page.
 # API Documentation: https://developers.google.com/google-apps/calendar/v3/reference/events/list
@@ -741,41 +737,25 @@ needmoreshare2:
 # See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
 # ---------------------------------------------------------------
 
-# Baidu Analytics ID
-#baidu_analytics:
+# Baidu Analytics
+baidu_analytics: f08a1f7937d18f480bef30f531b4289f
 
-# Growingio Analytics ID
+# Growingio Analytics
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
-#growingio_analytics: #your projectId
-# Google Webmaster tools verification setting
-# See: https://www.google.com/webmasters/
-#google_site_verification: InFIQ8ztFiGvNgZL7iOkZft-rDCgQedsOHVgibI38-g
+growingio_analytics: # <project_id>
 
 # Google Analytics
-#google_analytics: UA-79497021-2
-
-# Bing Webmaster tools verification setting
-# See: https://www.bing.com/webmaster
-#bing_site_verification:
-
-# Yandex Webmaster tools verification setting
-# See: https://webmaster.yandex.ru
-#yandex_site_verification:
-
-# Baidu Webmaster tools verification setting
-# See: https://ziyuan.baidu.com/site
-
-#baidu_site_verification:
-#google_analytics:
-#  tracking_id:
-#  localhost_ignored: true
+google_analytics:
+  tracking_id: UA-79497021-2
+  localhost_ignored: true
 
 # CNZZ count
-#cnzz_siteid:
+cnzz_siteid:
 
 # Application Insights
 # See: https://azure.microsoft.com/en-us/services/application-insights
-#application_insights:
+application_insights:
+
 
 # Post widgets & FB/VK comments settings.
 # ---------------------------------------------------------------
