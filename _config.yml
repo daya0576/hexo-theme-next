@@ -29,7 +29,7 @@ custom_file_path:
   #postBodyEnd: source/_data/post-body-end.swig
   #footer: source/_data/footer.swig
   #bodyEnd: source/_data/body-end.swig
-  #variable: source/_data/variables.styl
+  #variable: source/_data/custom.styl
   #mixin: source/_data/mixins.styl
   #style: source/_data/styles.styl
 
@@ -320,7 +320,7 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
-  separated_meta: true
+  separated_meta: false
   item_text_post: true
   item_text_total: false
   awl: 4
@@ -560,7 +560,7 @@ fancybox: false
 # Do not enable both `fancybox` and `mediumzoom`.
 # Dependencies: https://github.com/theme-next/theme-next-mediumzoom
 # For more information: https://github.com/francoischalifour/medium-zoom
-mediumzoom: false
+mediumzoom: true
 
 # Vanilla JavaScript plugin for lazyloading images.
 # Dependencies: https://github.com/theme-next/theme-next-lazyload
@@ -800,7 +800,7 @@ rating:
 # You can visit https://leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
   enable: true
-  app_id: 81TFVYHOi27fyiBMQQJceugT
+  app_id: 81TFVYHOi27fyiBMQQJceugT-gzGzoHsz
   app_key: t2AlDMIE0de4cfjGtbNQEYEE
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
@@ -1041,8 +1041,9 @@ vendors:
   # fancybox_css:
 
   # Internal version: 1.0.4
-  # Example:  # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
-  mediumzoom:
+  # Example:
+  mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
+  # mediumzoom:
 
   # Internal version: 1.10.0
   # Example:

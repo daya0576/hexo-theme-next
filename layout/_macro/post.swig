@@ -63,13 +63,11 @@
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
       {%- endif %}
 
-        {% if true %}
-          <div class="post-meta">
-          <span class="post-time">
+        <div class="post-meta">
 
-              {%- set date_diff = date(post.date) != date(post.updated) %}
-              {%- set time_diff = time(post.date) != time(post.updated) %}
-              {%- set datetime_diff = date_diff or time_diff %}
+          {%- set date_diff = date(post.date) != date(post.updated) %}
+          {%- set time_diff = time(post.date) != time(post.updated) %}
+          {%- set datetime_diff = date_diff or time_diff %}
 
           {%- if theme.post_meta.created_at %}
             <span class="post-meta-item">
@@ -81,21 +79,22 @@
               {%- endif %}
 
               {%- if !date_diff && time_diff && theme.post_meta.updated_at.enable && theme.post_meta.updated_at.another_day %}
-                {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
+              {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
               {% else %}
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
               {%- endif %}
 
-                <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
-                #}{{ date(post.date) -}}
-                </time>
-        {%- endif %}
+              <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
+              #}{{ date(post.date) -}}
+              </time>
+            </span>
+          {%- endif %}
 
-          {%- if theme.post_meta.updated_at.enable && datetime_diff %}
-            {%- set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
+        {%- if theme.post_meta.updated_at.enable && datetime_diff %}
+        {%- set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
 
-            {%- if display_updated or !theme.post_meta.created_at %}
-              <span class="post-meta-item">
+        {%- if display_updated or !theme.post_meta.created_at %}
+          <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
@@ -106,7 +105,7 @@
                 #}{{ date(post.updated) -}}
                 </time>
               </span>
-            {%- endif %}
+          {%- endif %}
           {%- endif %}
 
           {%- if post.categories and post.categories.length and theme.post_meta.categories %}
@@ -160,6 +159,7 @@
             {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
           {%- endfor %}
 
+          {%- if theme.symbols_count_time.separated_meta %}<br/>{%- endif %}
           {%- if theme.symbols_count_time.separated_meta %}<br>{%- endif %}
           {%- if config.symbols_count_time.symbols %}
             <span class="post-meta-item">
@@ -189,16 +189,15 @@
             </span>
           {%- endif %}
 
-      {%- if post.description and (not theme.excerpt_description or not is_index) %}
-        <div class="post-description">{#
-                  #}{{ post.description }}{#
-              #}</div>
-      {%- endif %}
-      </div>
-    {% endif %}
+          {%- if post.description and (not theme.excerpt_description or not is_index) %}
+            <div class="post-description">{#
+              #}{{ post.description }}{#
+            #}</div>
+          {%- endif %}
 
-    </header>
-  {%- endif %}
+        </div>
+      </header>
+    {%- endif %}
 
     {#################}
     {### POST BODY ###}

@@ -1,6 +1,4 @@
 // CSS Style Guide: http://codeguide.co/#css
-
-
 $scheme    = hexo-config('scheme') ? hexo-config('scheme') : 'Muse';
 
 $variables = base $scheme;
@@ -43,3 +41,5 @@ for $inject_mixin in hexo-config('injects.mixin')
 // --------------------------------------------------
 for $inject_style in hexo-config('injects.style')
   @import "../../../../" + $inject_style;
+
+@import "custom.styl";
