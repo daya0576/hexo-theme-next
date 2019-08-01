@@ -12,8 +12,9 @@ body {
   color: $text-color;
   background: $body-bg-color;
 
-  +tablet-mobile() { padding-right: 0 !important; }
-  +desktop-large() { font-size: $font-size-large; }
+  +tablet-mobile() {
+    padding-right: 0 !important;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,23 +28,6 @@ h1, h2, h3, h4, h5, h6 {
 for headline in (1..6) {
   h{headline} {
     font-size: $font-size-headings-base - $font-size-headings-step * headline;
-    code {
-      font-size: 1em;
-    }
-  }
-
-  // 正文标题的字体：
-  h1 {
-    font-size: 20px;
-  }
-
-  +mobile() {
-    h{headline} {
-      font-size: $font-size-headings-base - $font-size-headings-step * headline - 4px;
-      code {
-        font-size: 1em;
-      }
-    }
   }
 }
 
@@ -68,13 +52,13 @@ a, span.exturl {
 
 video {
   max-width: 100%;
-  show();
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 img {
-  show();
+  display: block;
   margin: auto;
   max-width: 100%;
   height: auto;
@@ -99,6 +83,9 @@ blockquote {
   padding: 0 15px;
   color: $grey-dim;
   border-left: 4px solid $gray-lighter;
+  p {
+    font-family: STKaiti, KaiTi, $font-family-posts;
+  }
 
   cite::before {
     content: "-";
@@ -106,7 +93,9 @@ blockquote {
   }
 }
 
-dt { font-weight: $font-weight-bolder; }
+dt {
+  font-weight: $font-weight-bolder;
+}
 
 dd {
   margin: 0;
