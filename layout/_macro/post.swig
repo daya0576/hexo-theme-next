@@ -131,19 +131,6 @@
             </span>
           {%- endif %}
 
-          {# LeanCloud PageView #}
-          {%- if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
-            <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              {%- if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
-              {%- endif %}
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          {%- endif %}
-
           {%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
             <span class="post-meta-item">
               <span class="post-meta-item-icon"
@@ -158,6 +145,19 @@
           {%- for inject_item in theme.injects.postMeta %}
             {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
           {%- endfor %}
+
+          {# LeanCloud PageView #}
+          {%- if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
+            <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              {%- if theme.post_meta.item_text %}
+                <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
+              {%- endif %}
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          {%- endif %}
 
           {%- if theme.symbols_count_time.separated_meta %}<br/>{%- endif %}
           {%- if theme.symbols_count_time.separated_meta %}<br>{%- endif %}
