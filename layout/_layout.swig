@@ -61,8 +61,6 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
-        {% include '_partials/analytics/index.swig' %}
-        {% include '_third-party/analytics/index.swig' %}
         {% block footer %}{% endblock %}
       </div>
     </footer>
