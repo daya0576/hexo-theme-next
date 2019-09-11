@@ -55,7 +55,8 @@ get_font_family(config) {
 }
 
 // Font families.
-$font-family-chinese      = "PingFang SC", "Microsoft YaHei";
+//$font-family-chinese      = "PingFang SC", "Microsoft YaHei";
+$font-family-chinese      = "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", sans-serif;
 
 $font-family-base         = $font-family-chinese, sans-serif;
 $font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global');
@@ -97,12 +98,12 @@ $font-size-largest        = 1.25em;
 
 // Headings font size
 $font-size-headings-step  = .125em;
-$font-size-headings-base  = 1.875em;
+$font-size-headings-base  = 1.75em;
 $font-size-headings-base  = unit(hexo-config('font.headings.size'), em) if hexo-config('font.headings.size') is a 'unit';
 
 
 // Global line height
-$line-height-base         = 2;
+$line-height-base         = 1.6;
 $line-height-code-block   = 1.6; // Can't be less than 1.3;
 
 
