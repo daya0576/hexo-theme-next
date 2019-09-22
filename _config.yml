@@ -14,7 +14,7 @@ reminder: false
 
 # Allow to cache content generation. Introduced in NexT v6.0.0.
 cache:
-  enable: false
+  enable: true
 
 # Remove unnecessary files after hexo generate.
 minify: false
@@ -749,7 +749,7 @@ add_this_id:
 # ---------------------------------------------------------------
 
 # Baidu Analytics
-baidu_analytics: # <app_id>
+baidu_analytics: f08a1f7937d18f480bef30f531b4289f
 
 # Growingio Analytics
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
