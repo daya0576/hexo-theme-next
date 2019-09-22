@@ -912,7 +912,7 @@ mermaid:
 # Use velocity to animate everything.
 # For more information: http://velocityjs.org
 motion:
-  enable: false
+  enable: true
   async: true
   transition:
     # Transition variants:
