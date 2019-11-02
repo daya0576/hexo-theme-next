@@ -138,10 +138,6 @@ menu_settings:
   icons: true
   badges: false
 
-archive_generator:
-  per_page: 20
-  yearly: true
-  monthly: true
 
 # ---------------------------------------------------------------
 # Sidebar Settings
@@ -776,7 +772,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: true
+  enable: false
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
