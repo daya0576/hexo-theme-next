@@ -128,7 +128,7 @@ menu:
   #  categories: /categories/ || th
   archives: /archives/ || list-ul
   tags: /tags/ || hashtag
-  about: /about/ || star-half-o
+  about: /about/index.html || star-half-o
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
