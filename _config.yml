@@ -124,9 +124,9 @@ scheme: Pisces
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
-  archives: / || terminal
+  home: / || terminal
   #categories: /categories/ || th
-  #archives: /archives/ || list-ul
+  archives: /archives/ || list-ul
   tags: /tags/ || hashtag
   about: /about/index.html || star-half-o
   #schedule: /schedule/ || calendar
@@ -249,7 +249,7 @@ excerpt_description: true
 # Automatically excerpt (Not recommend).
 # Use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Read more button
