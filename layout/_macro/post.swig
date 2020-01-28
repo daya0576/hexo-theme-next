@@ -215,10 +215,6 @@
       {%- endif %}
     </div>
 
-    {#####################}
-    {### END POST BODY ###}
-    {#####################}
-
     {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
       {{ partial('_partials/post/post-related.swig') }}
     {%- endif %}
@@ -255,6 +251,8 @@
 
         {{ partial('_partials/post/post-footer.swig', {}, {cache: theme.cache.enable}) }}
 
+        {{ partial('_partials/post/post-followme.swig', {}, {cache: theme.cache.enable}) }}
+
         {%- if post.prev or post.next %}
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
@@ -275,6 +273,7 @@
               {%- endif %}
             </div>
           </div>
+
         {%- endif %}
       </footer>
     {% else %}

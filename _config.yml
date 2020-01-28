@@ -185,11 +185,11 @@ site_state: true
 social:
   GitHub: https://github.com/daya0576 || github
   E-Mail: mailto:daya0576@gmail.com || envelope-o
+  Twitter: https://twitter.com/yourname || twitter
   Instagram: https://instagram.com/daya0576 || instagram
   Wechat: /images/wechat.JPG || wechat
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
@@ -688,6 +688,14 @@ rating:
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id:
 
+# Follow me through Telegram Channel, Twitter, etc.
+follow_me:
+  enable: true
+  channels:
+    twitter: https://twitter.com/mr_daya || Twitter
+    weibo: http://weibo.com/u/2478163907/home || 微博
+    telegram: https://t.me/daya_lifestyle || Telegram
+    wechat: /images/wechat_channel.jpg || 微信公众号
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
