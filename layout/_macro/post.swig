@@ -236,6 +236,8 @@
       {%- endif %}
 
       <footer class="post-footer">
+        {{ partial('_partials/post/post-followme.swig', {}, {cache: theme.cache.enable}) }}
+
         {%- if post.tags and post.tags.length %}
           {%- if theme.tag_icon %}
             {%- set tag_indicate = '<i class="fa fa-tag"></i>' %}
@@ -250,8 +252,6 @@
         {%- endif %}
 
         {{ partial('_partials/post/post-footer.swig', {}, {cache: theme.cache.enable}) }}
-
-        {{ partial('_partials/post/post-followme.swig', {}, {cache: theme.cache.enable}) }}
 
         {%- if post.prev or post.next %}
           <div class="post-nav">

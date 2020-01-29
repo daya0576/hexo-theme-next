@@ -688,14 +688,13 @@ rating:
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id:
 
-# Follow me through Telegram Channel, Twitter, etc.
+# Subscribe through Telegram Channel, Twitter, etc.
+# Usage: `Key: permalink || icon(Font Awesome)
 follow_me:
-  enable: true
-  channels:
-    twitter: https://twitter.com/mr_daya || Twitter
-    weibo: http://weibo.com/u/2478163907/home || 微博
-    telegram: https://t.me/daya_lifestyle || Telegram
-    wechat: /images/wechat_channel.jpg || 微信公众号
+  Twitter: https://twitter.com/mr_daya || twitter
+  Telegram: https://t.me/daya_lifestyle || telegram
+  Wechat: /images/wechat_channel.jpg || wechat
+  RSS: /atom.xml || rss
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
