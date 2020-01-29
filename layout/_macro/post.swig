@@ -40,6 +40,7 @@
           {%- endif %}
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
 
+        {%- if not is_index %}
         <div class="post-meta">
 
           {%- set date_diff = date(post.date) != date(post.updated) %}
@@ -161,6 +162,9 @@
           {%- endif %}
 
         </div>
+        {%- else %}
+          <div style="height: 5px"></div>
+        {% endif %}
       </header>
     {%- endif %}
 
