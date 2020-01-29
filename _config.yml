@@ -181,18 +181,18 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  GitHub: https://github.com/daya0576 || github
+  # GitHub: https://github.com/daya0576 || github
   E-Mail: mailto:daya0576@gmail.com || envelope-o
   Twitter: https://twitter.com/yourname || twitter
   Instagram: https://instagram.com/daya0576 || instagram
-  Wechat: /images/wechat.JPG || wechat
+  #Wechat: /images/wechat.JPG || wechat
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #FB Page: https://www.facebook.com/yourname || facebook
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
   #Skype: skype:yourname?call|chat || skype
-  #RSS: /atom.xml || rss
+  RSS: /atom.xml || rss
 
 social_icons:
   enable: true
