@@ -710,7 +710,7 @@ cnzz_siteid:
 
 # Google adsense
 google_adsense:
-  client_id: ca-pub-2989418305724533
+  client_id:
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
