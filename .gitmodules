@@ -1,9 +1,11 @@
 [submodule "Han"]
     path = source/lib/Han
     url = https://github.com/theme-next/theme-next-han.git
+
 [submodule "source/lib/fancybox"]
 	path = source/lib/fancybox
 	url = https://github.com/theme-next/theme-next-fancybox3.git
+
 [submodule "source/lib/jquery_lazyload"]
 	path = source/lib/jquery_lazyload
 	url = https://github.com/theme-next/theme-next-jquery-lazyload.git
