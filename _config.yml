@@ -599,10 +599,14 @@ comments:
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: daya0576
   count: true
   #post_meta_order: 0
+
+utterances:
+  enable: true
+
 
 # DisqusJS
 # Alternative Disqus - Render comment component using Disqus API.
