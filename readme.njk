@@ -1,0 +1,10 @@
+{%- for c in page.categories %}
+## {{c.name}}
+{%- for p in c.posts %}
+- [{{ moment(p.date).format('YYYY-MM-DD') }}] [{{p.title}}](https://github.com/daya0576/daya0576.github.io/blob/source/source/_posts/{{p.path}}.markdown)
+{%- endfor %}
+{%- endfor %}
+
+---
+
+auto generated from: https://changchen.me/archives/
