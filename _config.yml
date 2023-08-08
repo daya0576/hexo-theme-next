@@ -998,9 +998,9 @@ vendors:
 
   # Internal version: 1.2.1
   # Example:
-  velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
+#  velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
   # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
-  velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
+#  velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
   # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
   # velocity:
   # velocity_ui:
