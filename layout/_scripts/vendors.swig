@@ -1,3 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/darkreader/4.9.58/darkreader.min.js" integrity="sha512-VU2WQDwarmassdMJUeWnlq0cSCmM0zkhLNa7UM22YOm06Y3vCEHW8jAywgleU0qnqXY1nQB0dFVH6HZkucyEKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+DarkReader.enable({
+    brightness: 100,
+    contrast: 90,
+    sepia: 10
+});
+</script>
+
 {%- set js_vendors = {} %}
 {%- set js_vendors = js_vendors | attr('anime', 'anime.min.js') %}
 
@@ -45,3 +54,4 @@
   {%- set internal_script = next_vendors(internal) %}
   <script src="{{ theme.vendors[name] or internal_script }}"></script>
 {%- endfor %}
+

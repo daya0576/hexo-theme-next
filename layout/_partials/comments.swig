@@ -2,7 +2,7 @@
   <script src="https://utteranc.es/client.js"
           repo="daya0576/comments.daya0576.github.io"
           issue-term="pathname"
-          theme="github-light"
+          theme="github-dark"
           crossorigin="anonymous"
           async>
   </script>
