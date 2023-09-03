@@ -119,7 +119,7 @@ scheme: Pisces
 menu:
   home: / || terminal
   archives: /archives/ || list-ul
-  # categories: /categories/ || th
+  categories: /categories/ || th
   tags: /tags/ || hashtag
   about: /about/index.html || star-half-o
   #schedule: /schedule/ || calendar
