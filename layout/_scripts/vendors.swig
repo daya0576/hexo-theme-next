@@ -2,6 +2,10 @@
 <script>
 DarkReader.enable({
     brightness: 100,
+    contrast: 100,
+    sepia: 1,
+    darkSchemeBackgroundColor: "#1D1F21",
+    darkSchemeTextColor: "#E7EDF2",
 });
 </script>
 
