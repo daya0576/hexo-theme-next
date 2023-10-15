@@ -14,7 +14,7 @@
         {%- set display_toc = toc.length > 1 and display_toc %}
       {%- endif %}
 
-      <ul class="sidebar-nav motion-element">
+      <ul class="sidebar-nav motion-element" style="display: none">
         <li class="sidebar-nav-toc">
           {{ __('sidebar.toc') }}
         </li>

@@ -1,6 +1,9 @@
 <script src="/lib/darkreader.min.js" integrity="sha512-VU2WQDwarmassdMJUeWnlq0cSCmM0zkhLNa7UM22YOm06Y3vCEHW8jAywgleU0qnqXY1nQB0dFVH6HZkucyEKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 DarkReader.enable({
+    brightness: 100,
+    contrast: 90,
+    sepia: 10,
     darkSchemeBackgroundColor: "#000",
     // darkSchemeTextColor: "#E7EDF2",
 });
