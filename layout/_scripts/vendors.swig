@@ -1,7 +1,7 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/darkreader/4.9.58/darkreader.min.js" integrity="sha512-VU2WQDwarmassdMJUeWnlq0cSCmM0zkhLNa7UM22YOm06Y3vCEHW8jAywgleU0qnqXY1nQB0dFVH6HZkucyEKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/lib/darkreader.min.js" integrity="sha512-VU2WQDwarmassdMJUeWnlq0cSCmM0zkhLNa7UM22YOm06Y3vCEHW8jAywgleU0qnqXY1nQB0dFVH6HZkucyEKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 DarkReader.enable({
-    // darkSchemeBackgroundColor: "#1D1F21",
+    darkSchemeBackgroundColor: "#000",
     // darkSchemeTextColor: "#E7EDF2",
 });
 </script>
