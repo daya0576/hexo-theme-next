@@ -163,7 +163,8 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: /images/gravatar.jpg
+  # url: /images/gravatar.jpg
+  url: https://cdn.jsdelivr.net/gh/daya0576/daya0576.github.io@master/images/gravatar.jpg
   # If true, the avatar will be dispalyed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
@@ -909,10 +910,10 @@ vendors:
 
   # Internal version: 3.1.0
   # Example:
-  # anime: //cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js
+  anime: //cdn.jsdelivr.net/ajax/libs/animejs/3.2.1/anime.min.js
 
   # Internal version: 4.7.0
-  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
+  fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 
@@ -938,12 +939,12 @@ vendors:
   pjax:
 
   # FancyBox
-  # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
-  # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
-  # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
-  jquery: /lib/jquery.min.js
-  fancybox: /lib/jquery.fancybox.min.js
-  fancybox_css: /lib/jquery.fancybox.min.css
+  jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
+  fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
+  fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
+  # jquery: /lib/jquery.min.js
+  # fancybox: /lib/jquery.fancybox.min.js
+  # fancybox_css: /lib/jquery.fancybox.min.css
 
   # Medium-zoom
   # mediumzoom:
