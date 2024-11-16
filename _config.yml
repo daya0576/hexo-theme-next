@@ -39,10 +39,10 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon.ico
-  medium: /images/favicon.ico
-  apple_touch_icon: /images/favicon.ico
-  safari_pinned_tab: /images/favicon.ico
+  small: /images/favicon.svg
+  medium: /images/favicon.svg
+  apple_touch_icon: /images/favicon.svg
+  safari_pinned_tab: /images/favicon.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -163,7 +163,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  # url: /images/gravatar.jpg
+  # url: /images/sidebar_avator.svg
   url: https://cdn.jsdelivr.net/gh/daya0576/daya0576.github.io@master/images/gravatar.jpg
   # If true, the avatar will be dispalyed in circle.
   rounded: true
